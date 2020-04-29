@@ -1,5 +1,5 @@
-<h1>Accounts#edit</h1>
+<h1>Edit <span class="ui blue text"><%= @account.username %></span> details</h1>
 
 <%= render 'form' %>
-
-<%= link_to 'Delete', @account, method: :delete, data: { confirm: 'Are you sure?' } %>
+<br />
+<%= link_to 'Delete', @account, class: "ui red button", method: :delete, data: { confirm: 'Are you sure?' } %>

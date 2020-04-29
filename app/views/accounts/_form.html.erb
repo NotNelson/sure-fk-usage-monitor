@@ -1,9 +1,12 @@
-<%= form_for @account do |elem| %>
-  <%= elem.label :username %>
-  <%= elem.text_field :username %>
-  <br />
-  <%= elem.label :password %>
-  <%= elem.password_field :password %>
-  <br />
-  <%= elem.submit %>
+<%= form_for @account, :html => {:class => "ui form"} do |elem| %>
+  <div class="field">
+    <%= elem.label :username %>
+    <%= elem.text_field :username %>
+  </div>
+  <div class="field">
+    <%= elem.label :password %>
+    <%= elem.password_field :password %>
+  </div>
+
+  <%= elem.submit class: "ui blue button" %>
 <% end %>

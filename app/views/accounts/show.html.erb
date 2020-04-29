@@ -1,9 +1,16 @@
-<h1>Account Details</h1>
-
-<%= link_to "Account List", accounts_path %>
-<%= link_to "Edit", edit_account_path(@account) %>
-
-<h1><%= @account.username %></h1>
-<h1><%= @account.password %></h1>
+<div class="ui grid">
+  <div class="row">
+    <div class="eight wide column">
+      <h1><%= @account.username %></h1>
+    </div>
+    <div class="eight wide column">
+      <div style="float:right">
+        <%= link_to "Edit", edit_account_path(@account), class: "ui blue button" %>
+      </div>
+    </div>
+  </div>
+</div>
+<hr>
+<h4>Usage chart</h4>
 
 <%= line_chart(parse_table_data(get_data(@account))) %>

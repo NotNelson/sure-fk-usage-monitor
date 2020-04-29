@@ -1,15 +1,36 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>SureFkUsageMonitor</title>
+    <title>Sure FK Multi Account Monitor</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <style>
+      body {
+        padding-top: 40px;
+      }
+    </style>
   </head>
 
   <body>
-    <%= yield %>
+    <div class="ui container">
+      <div class="ui menu">
+        <% if user_signed_in? %>
+          <%= link_to 'My Accounts', accounts_path, class: "item" %>
+        <% end %>
+        <div class="right menu">
+          <% if user_signed_in? %>
+            <%= link_to 'Edit User', edit_user_registration_path, class: "item" %>
+            <%= link_to('Logout', destroy_user_session_path, class: "item", method: :delete) %>
+          <% else %>
+            <%= link_to('Login', new_user_session_path, class: "item") %>
+          <% end %>
+        </div>
+      </div>
+      <%= yield %>
+    </div>
   </body>
 </html>
