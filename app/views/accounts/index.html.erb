@@ -1,0 +1,17 @@
+<h1>Accounts#index</h1>
+<p>Welcome to your account list</p>
+
+<%= render 'shared/deviselinks' %>
+
+<% unless @accounts == nil %>
+  <% @accounts.each do |account| %>
+    <% data = get_data(account)  %>
+
+    <%= account.username %>
+    <%= data[0]["name"] %>
+    <%= data[0]["quota"] %>
+    <%= data[0]["total"] %>
+    <%= link_to 'View', account_path(account.id) %>
+    <br/>
+  <% end %>
+<% end %>

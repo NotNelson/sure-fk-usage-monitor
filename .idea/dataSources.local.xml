@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="Rails sure-fk-usage-monitor: development" uuid="aa04cfee-8014-442b-b1aa-a7c55871305b">
+      <database-info product="PostgreSQL" version="12.1" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.2.5" dbms="POSTGRES" exact-version="12.1" exact-driver-version="42.2">
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
+      <introspection-schemas>@:@</introspection-schemas>
+    </data-source>
+    <data-source name="Rails sure-fk-usage-monitor: test" uuid="1bb9eb31-0774-48e5-96bf-9af9895051fc">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="POSTGRES" exact-version="0" />
+    </data-source>
+    <data-source name="Rails sure-fk-usage-monitor: production" uuid="ec98ee6b-8d81-4dd5-9241-d3d7ab938e9b">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="POSTGRES" exact-version="0" />
+      <user-name>sure_fk_usage_monitor</user-name>
+    </data-source>
+  </component>
+</project>

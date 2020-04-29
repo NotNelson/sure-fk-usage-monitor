@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="Rails sure-fk-usage-monitor: development" uuid="aa04cfee-8014-442b-b1aa-a7c55871305b">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/config/database.yml</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://127.0.0.1:5432/sure_fk_usage_monitor_development</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="Rails sure-fk-usage-monitor: test" uuid="1bb9eb31-0774-48e5-96bf-9af9895051fc">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/config/database.yml</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://127.0.0.1:5432/sure_fk_usage_monitor_test</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="Rails sure-fk-usage-monitor: production" uuid="ec98ee6b-8d81-4dd5-9241-d3d7ab938e9b">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/config/database.yml</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://127.0.0.1:5432/sure_fk_usage_monitor_production</jdbc-url>
+    </data-source>
+  </component>
+</project>

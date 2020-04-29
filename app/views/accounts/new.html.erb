@@ -1,0 +1,7 @@
+<h1>Accounts#create</h1>
+
+<%= form_for @account do |elem| %>
+  <%= elem.text_field :username %>
+  <%= elem.text_field :password %>
+  <%= elem.submit %>
+<% end %>
