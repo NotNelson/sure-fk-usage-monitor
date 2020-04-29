@@ -3,7 +3,8 @@
      has_many :details
 
      # Current app secret key base for salting the password hash
-     SALT = Rails.application.credentials.secret_key_base
+     # TODO: debug for Heroku deployment SALT = Rails.application.credentials.secret_key_base
+     SALT = "8dh293n9d98j23o892j578xsdm8e2734"
 
      # Sure API location
      API = URI.parse('http://usage.sure.co.fk/cgi-bin/bots')
