@@ -17,19 +17,15 @@
 
   <body>
     <div class="ui container">
+      <% if user_signed_in? %>
       <div class="ui menu">
-        <% if user_signed_in? %>
-          <%= link_to 'My Accounts', accounts_path, class: "item" %>
-        <% end %>
+        <%= link_to 'My Accounts', accounts_path, class: "item" %>
         <div class="right menu">
-          <% if user_signed_in? %>
-            <%= link_to 'Edit User', edit_user_registration_path, class: "item" %>
-            <%= link_to('Logout', destroy_user_session_path, class: "item", method: :delete) %>
-          <% else %>
-            <%= link_to('Login', new_user_session_path, class: "item") %>
-          <% end %>
+          <%= link_to 'Edit User', edit_user_registration_path, class: "item" %>
+          <%= link_to('Logout', destroy_user_session_path, class: "item", method: :delete) %>
         </div>
       </div>
+      <% end %>
       <%= yield %>
     </div>
   </body>
