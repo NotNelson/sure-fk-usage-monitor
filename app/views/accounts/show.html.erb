@@ -1,9 +1,9 @@
-<h1>Accounts#show</h1>
+<h1>Account Details</h1>
 
+<%= link_to "Account List", accounts_path %>
+<%= link_to "Edit", edit_account_path(@account) %>
 
 <h1><%= @account.username %></h1>
 <h1><%= @account.password %></h1>
 
-<pre><% usage = get_data(@account) %>
-
-<%= usage[0]["daily"][0].to_s %></pre>
+<%= line_chart(parse_table_data(get_data(@account))) %>
