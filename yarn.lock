@@ -2976,6 +2976,11 @@ follow-redirects@^1.0.0:
   dependencies:
     debug "^3.0.0"
 
+fomantic-ui-sass@^2.7.80008:
+  version "2.7.80008"
+  resolved "https://registry.yarnpkg.com/fomantic-ui-sass/-/fomantic-ui-sass-2.7.80008.tgz#954b97a606c766d957488f7b50a79bdfa1278b11"
+  integrity sha512-6dTEADNOKjXGGR6JdGe4ywBzKrAv6jHGmJR6K/XBlEWus65qof/erZ+6dSrQVeziijbgymxYOT9bRhdJjyMtVw==
+
 for-in@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/for-in/-/for-in-1.0.2.tgz#81068d295a8142ec0ac726c6e2200c30fb6d5e80"
@@ -3894,6 +3899,11 @@ jest-worker@^25.4.0:
   dependencies:
     merge-stream "^2.0.0"
     supports-color "^7.0.0"
+
+jquery@^3.5.0:
+  version "3.5.0"
+  resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.5.0.tgz#9980b97d9e4194611c36530e7dc46a58d7340fc9"
+  integrity sha512-Xb7SVYMvygPxbFMpTFQiHh1J7HClEaThguL15N/Gg37Lri/qKyhRGZYzHRyLH8Stq3Aow0LsHO2O2ci86fCrNQ==
 
 js-base64@^2.1.8:
   version "2.5.2"
@@ -5153,6 +5163,11 @@ pnp-webpack-plugin@^1.5.0:
   dependencies:
     ts-pnp "^1.1.6"
 
+popper.js@^1.16.1:
+  version "1.16.1"
+  resolved "https://registry.yarnpkg.com/popper.js/-/popper.js-1.16.1.tgz#2a223cb3dc7b6213d740e40372be40de43e65b1b"
+  integrity sha512-Wb4p1J4zyFTbM+u6WuO4XstYx4Ky9Cewe4DWrel7B0w6VVICvPwdOpotjzcf6eD8TsckVnIMNONQyPIUFOUbCQ==
+
 portfinder@^1.0.25:
   version "1.0.25"
   resolved "https://registry.yarnpkg.com/portfinder/-/portfinder-1.0.25.tgz#254fd337ffba869f4b9d37edc298059cb4d35eca"
@@ -6338,6 +6353,11 @@ selfsigned@^1.10.7:
   integrity sha512-8M3wBCzeWIJnQfl43IKwOmC4H/RAp50S8DF60znzjW5GVqTcSe2vWclt7hmYVPkKPlHWOu5EaWOMZ2Y6W8ZXTA==
   dependencies:
     node-forge "0.9.0"
+
+semantic-ui-sass@^2.4.2:
+  version "2.4.2"
+  resolved "https://registry.yarnpkg.com/semantic-ui-sass/-/semantic-ui-sass-2.4.2.tgz#ac1151ecf2c1b3d41fe55e4e4db5144a5d90cfec"
+  integrity sha512-UgDCDHqc36kBWjHqVOhYcm12Dewiro6SY80OUBUuSXEKRVn6Uph47OGB+JnGzblRbcmUNdNedGSAwZg8Pk6sDQ==
 
 "semver@2 || 3 || 4 || 5", semver@^5.4.1, semver@^5.5.0, semver@^5.5.1, semver@^5.6.0:
   version "5.7.1"

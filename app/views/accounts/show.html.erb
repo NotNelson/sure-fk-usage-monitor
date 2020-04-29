@@ -1,3 +1,5 @@
+<% data = parse_table_data(get_data(@account)) %>
+
 <div class="ui grid">
   <div class="row">
     <div class="eight wide column">
@@ -13,4 +15,33 @@
 <div class="ui divider"></div>
 <h4>Usage chart</h4>
 
-<%= line_chart(parse_table_data(get_data(@account))) %>
+<%= line_chart(data) %>
+
+<!--
+<h2>Usage detail</h2>
+<div class="ui grid">
+  <div class="eight wide column">
+    <table class="ui blue table">
+      <thead>
+      <tr>
+        <th>Date</th>
+        <th>Usage (MB)</th>
+        <th>Protein</th>
+      </tr>
+      </thead>
+      <tbody>
+      <% data.each do |row| %>
+        <tr>
+          <td><%= row[0] %></td>
+          <td><%= row[1] %></td>
+          <td>0g</td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+  <div class="eight wide column">
+
+  </div>
+</div>
+-->
