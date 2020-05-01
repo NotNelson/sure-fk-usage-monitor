@@ -2,11 +2,11 @@ class AccountsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @accounts = Account.where(user_id: current_user.id)
+    @accounts = current_user.accounts.all
   end
 
   def show
-    @account = Account.find(params[:id])
+    @account = current_account
   end
 
   def new
@@ -14,7 +14,7 @@ class AccountsController < ApplicationController
   end
 
   def create
-    @account = current_user.accounts.new(account_params)
+    @account = current_account
     @account.encrypt_password
     if @account.validate_account
       if @account.save
@@ -24,11 +24,11 @@ class AccountsController < ApplicationController
   end
 
   def edit
-    @account = Account.find(params[:id])
+    @account = current_account
   end
 
   def update
-    @account = Account.find(params[:id])
+    @account = current_account
 
     if @account.update(account_params)
       @account.encrypt_password
@@ -48,5 +48,9 @@ class AccountsController < ApplicationController
   private
   def account_params
     params.require(:account).permit(:user_id, :username, :password)
+  end
+
+  def current_account
+    current_user.accounts.find(params[:id])
   end
 end
