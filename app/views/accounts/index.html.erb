@@ -25,7 +25,7 @@
     </thead>
     <tbody>
       <% @accounts.each do |account| %>
-      <% data = account.get_usage %>
+        <% data = account.get_usage %>
 
         <tr <% if data["ratio"].to_f >= 100 %> class="negative" <% end %><% if data["ratio"].to_f >= 70 %> class="warning" <% end %>>
           <td><i class="user icon"></i><%= data["name"] %> (<%= link_to account.username, account_path(account.id) %>)</td>

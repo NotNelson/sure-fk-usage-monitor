@@ -1,7 +1,7 @@
 <% unless @account.is_updated? %>
   <% @account.get_usage %>
 <% end %>
-<% data = parse_table_data(@account.json_data) %>
+<% data = @account.json_data["daily"] != nil ? parse_table_data(@account.json_data) : "" %>
 
 <div class="ui grid">
   <div class="row">

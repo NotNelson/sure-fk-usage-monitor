@@ -4,8 +4,8 @@
 
      # Current app secret key base for salting the password hash
      # TODO: debug for Heroku deployment
-     SALT = Rails.application.credentials.secret_key_base
-     #SALT = "8dh293n9d98j23o892j578xsdm8e2734"
+     #SALT = Rails.application.credentials.secret_key_base
+     SALT = "8dh293n9d98j23o892j578xsdm8e2734"
 
      # Sure API location
      API = URI.parse('http://usage.sure.co.fk/cgi-bin/bots')
@@ -36,9 +36,11 @@
        self.password = cipher.update(decrypted) + cipher.final
      end
 
-     # Requests account data to the Sure API and returns a Rails Json object
+     # Requests account data to the Sure API and
+     # returns a Rails Json object
      def get_usage
-       # Check if its been at least an hour since the last time the account was checked
+       # Check if its been at least an hour since the
+       # last time the account was checked
        if ((Time.now - self.updated_at) / 1.hour).round >= 1 || self.details.count == 0 || self.is_updated == false
          request = Net::HTTP::Get.new(API.path)
          request.basic_auth self.username, self.decrypt_password
@@ -67,8 +69,18 @@
        self.save
      end
 
+     # Get usage data and stores it on the database so we can
+     # have meaningful stats in the future.
      def update_usage_data(data)
-       if self.details.count > 0 # yes there are records details, lets update the table
+       # Probably the first day of the month, nil days with usage.
+       # dont attempt to collect usage data
+       if data["daily"] == nil
+         return
+       end
+
+       # Yes there are records details, lets update the table
+       # with whatever is not in there already.
+       if self.details.count > 0
          arr_len = data["daily"].length
          last_record = self.details.last.date_name
          data["daily"].each_with_index do |kv, index|
@@ -82,6 +94,8 @@
            end
          end
        else
+         # This account was just added so let get everything
+         # into the database
          data["daily"].each do |day|
            self.details.create(
                date_name: day.keys[0],
