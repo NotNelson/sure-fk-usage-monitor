@@ -16,8 +16,10 @@ class AccountsController < ApplicationController
   def create
     @account = current_user.accounts.new(account_params)
     @account.encrypt_password
-    if @account.save
-      redirect_to @account
+    if @account.validate_account
+      if @account.save
+        redirect_to @account
+      end
     end
   end
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_28_212829) do
+ActiveRecord::Schema.define(version: 2020_05_01_004504) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,13 @@ ActiveRecord::Schema.define(version: 2020_04_28_212829) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"
+    t.boolean "is_updated", default: false
+    t.float "quota", default: 0.0
+    t.float "total", default: 0.0
+    t.float "ratio", default: 0.0
+    t.string "name"
+    t.string "latest_update"
+    t.json "json_data"
   end
 
   create_table "details", force: :cascade do |t|
@@ -29,6 +36,7 @@ ActiveRecord::Schema.define(version: 2020_04_28_212829) do
     t.decimal "usage_amount"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "date_name"
     t.index ["account_id"], name: "index_details_on_account_id"
   end
 

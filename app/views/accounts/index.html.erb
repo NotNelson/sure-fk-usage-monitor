@@ -12,35 +12,41 @@
     </div>
   </div>
 </div>
+<% if @accounts.count > 0 %>
+  <table class="ui celled table">
+    <thead>
+     <tr>
+       <th>Owner (username)</th>
+       <th class="right aligned">Total Allowance</th>
+       <th class="right aligned">Usage</th>
+       <th class="center aligned">%</th>
+       <th class="center aligned">Actions</th>
+     </tr>
+    </thead>
+    <tbody>
+      <% @accounts.each do |account| %>
+      <% data = account.get_usage %>
 
-<table class="ui celled table">
-  <thead>
-   <tr>
-     <th>Owner (username)</th>
-     <th class="right aligned">Total Allowance</th>
-     <th class="right aligned">Usage</th>
-     <th class="center aligned">%</th>
-     <th class="center aligned">Actions</th>
-   </tr>
-  </thead>
-  <tbody>
-  <% unless @accounts == nil %>
-    <% @accounts.each do |account| %>
-      <% data = get_data(account)  %>
-      <tr
-        <% if data["ratio"].to_f >= 100 %> class="negative" <% end %>
-        <% if data["ratio"].to_f >= 70 %> class="warning" <% end %>
-      >
-        <td><i class="user icon"></i><%= data["name"] %> (<%= link_to account.username, account_path(account.id) %>)</td>
-        <td class="right aligned"><%= data["quota"] %> MB</td>
-        <td class="right aligned"><%= data["total"] %> MB</td>
-        <td class="center aligned"><%= data["ratio"] %><strong> %</strong></td>
-        <td class="collapsing right aligned">
-          <%= link_to 'View', account_path(account.id), class: "ui teal button mini" %>
-          <%= link_to 'Edit', edit_account_path(account.id), class: "ui blue button mini" %>
-        </td>
-      </tr>
-    <% end %>
-  <% end %>
-  </tbody>
-</table>
+        <tr <% if data["ratio"].to_f >= 100 %> class="negative" <% end %><% if data["ratio"].to_f >= 70 %> class="warning" <% end %>>
+          <td><i class="user icon"></i><%= data["name"] %> (<%= link_to account.username, account_path(account.id) %>)</td>
+          <td class="right aligned"><%= data["quota"] %> MB</td>
+          <td class="right aligned"><%= data["total"] %> MB</td>
+          <td class="center aligned"><%= data["ratio"] %><strong> %</strong></td>
+          <td class="collapsing right aligned">
+            <%= link_to 'View', account_path(account.id), class: "ui teal button mini" %>
+            <%= link_to 'Edit', edit_account_path(account.id), class: "ui blue button mini" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <div class="ui positive message">
+    <i class="close icon"></i>
+    <div class="header">
+      Nothing to show here...
+    </div>
+    <p>You dont have any accounts at the moment, add some. <%= link_to 'Add account', new_account_path %></p>
+  </div>
+
+<% end %>
