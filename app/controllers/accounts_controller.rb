@@ -14,7 +14,7 @@ class AccountsController < ApplicationController
   end
 
   def create
-    @account = current_account
+    @account = current_user.accounts.new(account_params)
     @account.encrypt_password
     if @account.validate_account
       if @account.save
