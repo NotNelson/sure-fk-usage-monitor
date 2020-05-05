@@ -21,8 +21,13 @@
       <div class="ui menu">
         <%= link_to 'My Accounts', accounts_path, class: "item" %>
         <div class="right menu">
-          <%= link_to 'Edit User', edit_user_registration_path, class: "item" %>
-          <%= link_to('Logout', destroy_user_session_path, class: "item", method: :delete) %>
+          <div class="ui simple dropdown item">
+            <%= current_user.email %> <i class="dropdown icon"></i>
+            <div class="menu">
+              <%= link_to 'Edit User', edit_user_registration_path, class: "item" %>
+              <%= link_to('Logout', destroy_user_session_path, class: "item", method: :delete) %>
+            </div>
+          </div>
         </div>
       </div>
       <% end %>
