@@ -30,4 +30,10 @@ To produce this app I used the following gems:
 
 * Improved speed when handling multiple accounts
 
+---
+
+The site can be accessed at: [www.datausage.site](https://www.datausage.site)
+
+All data comes from the Sure usage portal for customers: [www.sure.co.fk](http://www.sure.co.fk)
+
 Contact: [nelson@datapolaris.com](mailto:nelson@datapolaris.com)
