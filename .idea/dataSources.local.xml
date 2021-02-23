@@ -6,14 +6,22 @@
         <identifier-quote-string>&quot;</identifier-quote-string>
       </database-info>
       <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
-      <introspection-schemas>@:@</introspection-schemas>
+      <schema-mapping>
+        <introspection-scope>
+          <node kind="database" qname="@">
+            <node kind="schema" qname="@" />
+          </node>
+        </introspection-scope>
+      </schema-mapping>
     </data-source>
     <data-source name="Rails sure-fk-usage-monitor: test" uuid="1bb9eb31-0774-48e5-96bf-9af9895051fc">
       <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="POSTGRES" exact-version="0" />
+      <schema-mapping />
     </data-source>
     <data-source name="Rails sure-fk-usage-monitor: production" uuid="ec98ee6b-8d81-4dd5-9241-d3d7ab938e9b">
       <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="POSTGRES" exact-version="0" />
       <user-name>sure_fk_usage_monitor</user-name>
+      <schema-mapping />
     </data-source>
   </component>
 </project>

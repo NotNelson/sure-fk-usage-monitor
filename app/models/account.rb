@@ -76,7 +76,7 @@
          return
        end
 
-       # Yes there are records details, lets update the table
+       # Yes there are record details, lets update the table
        # with whatever is not in there already.
        if self.details.count > 0
          arr_len = data["daily"].length
@@ -92,7 +92,7 @@
            end
          end
        else
-         # This account was just added so let get everything
+         # This account was just added so lets get everything
          # into the database
          data["daily"].each do |day|
            self.details.create(
